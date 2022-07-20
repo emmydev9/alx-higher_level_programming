@@ -1,13 +1,8 @@
 #!/usr/bin/python3
-def __doc__():
-    """
-    module documentation
-    """
-
-
+"""
+A module that defines a class
+"""
 class Square:
-    def __doc__(self):
-        """
-        Class that defines a square.
-        """
-        pass
+    """Class Square that defines a square.
+    """
+    pass
