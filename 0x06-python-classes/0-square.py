@@ -3,6 +3,8 @@ def __doc__():
     """
     module documentation
     """
+
+
 class Square:
     def __doc__(self):
         """
