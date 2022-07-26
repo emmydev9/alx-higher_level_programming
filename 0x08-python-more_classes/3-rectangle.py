@@ -57,7 +57,7 @@ class Rectangle:
         else:
             return (0)
 
-    def __str___(self):
+    def __str__(self):
         """ method that return the Rectangle #
 
         Return : str representation of the rectangle
