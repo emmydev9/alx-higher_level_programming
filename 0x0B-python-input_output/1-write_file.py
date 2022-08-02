@@ -13,6 +13,6 @@ def write_file(filename="", text=""):
         f.write(text)
     f.close()
 
-    fd = open(filename, "r", encoding="utf-8");
+    fd = open(filename, "r", encoding="utf-8")
     data = fd.read()
     return len(data)
