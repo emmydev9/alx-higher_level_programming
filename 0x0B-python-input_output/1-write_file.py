@@ -9,7 +9,10 @@ def write_file(filename="", text=""):
         filename: filename
         text : string
     """
-    with open(filename, "r+", encoding="utf-8") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         f.write(text)
-        n_lines = len(f.readlines())
-    return n_lines
+    f.close()
+
+    fd = open(filename, "r", encoding="utf-8");
+    data = fd.read()
+    return len(data)
