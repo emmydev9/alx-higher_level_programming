@@ -9,7 +9,7 @@ class Square extends Squares {
   }
 
   charPrint (c) {
-    if (!c) {
+    if (c === undefined) {
       super.print();
     } else {
       for (let i = 0; i < this.size; i++) {
