@@ -13,7 +13,9 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect(host="localhost", user=u, passwd=p, db=db, port=port)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE CONVERT (`name` USING LATIN1) COLLATE Latin1_GENERAL_CS = '{}';".format(search))
+    cur.execute("SELECT * FROM states WHERE CONVERT \
+        (`name` USING LATIN1) \
+        COLLATE Latin1_GENERAL_CS = '{}';".format(search))
     states = cur.fetchall()
 
     for state in states:
