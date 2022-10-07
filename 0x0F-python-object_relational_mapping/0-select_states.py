@@ -5,16 +5,15 @@ import MySQLdb
 
 if __name__ == "__main__":
 
-	username = sys.argv[1]
-	password = sys.argv[2]
-	dbname = sys.argv[3]
-	port = 3306
+    u = sys.argv[1]
+    p = sys.argv[2]
+    db = sys.argv[3]
+    port = 3306
 
-	db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=dbname, port=port)
-	cur = db.cursor()
-	cur.execute("SELECT * FROM states")
-	states = cur.fetchall()
+    db = MySQLdb.connect(host="localhost", user=u, passwd=p, db=db, port=port)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
+    states = cur.fetchall()
 
-	for state in states:
-		print(state)
-
+    for state in states:
+        print(state)
