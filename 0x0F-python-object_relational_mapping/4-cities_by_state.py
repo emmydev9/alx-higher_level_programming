@@ -5,16 +5,16 @@ import MySQLdb
 
 if __name__ == '__main__':
 
-	u = sys.argv[1]
-	p = sys.argv[2]
-	dbn = sys.argv[3]
-	port = 3306
+    u = sys.argv[1]
+    p = sys.argv[2]
+    dbn = sys.argv[3]
+    port = 3306
 
-	db = MySQLdb.connect(host="localhost", user=u, passwd=p, db=dbn, port=port)
-	cur = db.cursor()
-	cur.execute("SELECT * FROM cities")
-	cities = cur.fetchall()
+    db = MySQLdb.connect(host="localhost", user=u, passwd=p, db=dbn, port=port)
+    cur = db.cursor()
+    cur.execute("SELECT cities.id, cities.name, states.name \
+        FROM cities JOIN states ON cities.state_id = states.id")
+    cities = cur.fetchall()
 
-	for city in cities:
-		print(city)
-
+    for city in cities:
+        print(city)
