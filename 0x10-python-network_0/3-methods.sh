@@ -1,3 +1,3 @@
 #!/bin/bash
 # script that list the supported http method on a server
-curl -s -X OPTIONS
+curl -sI -X OPTIONS | grep "Allow:" | cut -d " " -f 2
