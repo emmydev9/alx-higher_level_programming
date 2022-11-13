@@ -7,7 +7,7 @@ const filename = process.argv[2];
 const data = process.argv[3];
 fs.writeFile(filename, data, 'utf8', function (err) {
   if (err) {
-    console.log(err);
+    return err;
   }
-  console.log(data > filename);
+  return data > filename;
 });
